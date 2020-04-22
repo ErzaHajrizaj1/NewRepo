@@ -52,6 +52,7 @@ namespace MenaxhimiMallrave
                 }
             }
 
+
             if (IsOpen == false)
             {
                 //Form2 f2 = new Form2();
