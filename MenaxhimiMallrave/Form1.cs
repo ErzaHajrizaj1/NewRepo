@@ -56,6 +56,7 @@ namespace MenaxhimiMallrave
             if (IsOpen == false)
             {
                 //Form2 f2 = new Form2();
+                //test2
                 frm.MdiParent = this;
                 frm.Show();
             }
