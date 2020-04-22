@@ -26,20 +26,27 @@ namespace MenaxhimiMallrave
         {
 
         }
-
+        public void ShowPanel()
+        {
+            panel1.BringToFront();
+        }
+        public void ClearTittle()
+        {
+            LblTittle.Text = "";
+        }
         private void listBox1_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedItem != null)
             {
                 if (listBox1.SelectedItem.ToString()== "Regjistrimi i Klientave")
                 {
-                 RegjistrimiKlientave kmsh = new RegjistrimiKlientave();
+                RegjistrimiKlientave kmsh = new RegjistrimiKlientave();
                 kmsh.MdiParent = this;
-                ShowForm(kmsh);
+                ShowForm(kmsh, "Regjistrimi i Klientave");
                 }
             }
         }
-        public void ShowForm(Form frm)
+        public void ShowForm(Form frm,string Tittle)
         {
             bool IsOpen = false;
             foreach (Form f in Application.OpenForms)
@@ -57,7 +64,13 @@ namespace MenaxhimiMallrave
             {
                 //Form2 f2 = new Form2();
                 //test2
+                LblTittle.Text = Tittle;
                 frm.MdiParent = this;
+                frm.Location = panel1.Location;
+                frm.Anchor = panel1.Anchor;
+                frm.Size = panel1.Size;
+                frm.BringToFront();
+                panel1.SendToBack();
                 frm.Show();
             }
         }

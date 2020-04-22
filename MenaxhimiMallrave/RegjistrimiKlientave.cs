@@ -16,5 +16,14 @@ namespace MenaxhimiMallrave
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Form1 frm1 = (Form1)Application.OpenForms[0];
+            frm1.ShowPanel();     
+            frm1.ClearTittle();
+
+        }
     }
 }
